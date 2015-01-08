@@ -42,6 +42,11 @@ public class POIExcelReader {
         this.xmlReader.setContentHandler(contentHandler);
     }
 
+    public static void main(String[] args) throws InvalidFormatException, SAXException, IOException, OpenXML4JException {
+        POIExcelReader example = new POIExcelReader("xxxx.xlsx", new DefaultSheetHandler());
+//        example.processAllSheets();
+        example.readDataFromColumn(0, 0);
+    }
 
     private void dispose() {
 //        this.r.
@@ -76,13 +81,6 @@ public class POIExcelReader {
             idx++;
         }
     }
-
-    public static void main(String[] args) throws InvalidFormatException, SAXException, IOException, OpenXML4JException {
-        POIExcelReader example = new POIExcelReader("xxxx.xlsx", new DefaultSheetHandler());
-//        example.processAllSheets();
-        example.readDataFromColumn(0, 0);
-    }
-
 
 
 }

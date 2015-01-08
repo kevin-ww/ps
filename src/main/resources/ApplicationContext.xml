@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+       <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+              <property name="driverClassName" value="org.h2.Driver"/>
+              <property name="url" value="jdbc:h2:file:h2\db"/>
+
+
+              <!--H2 supports an INIT script (a SQL script which is executed when opening the connection). The database URL would look like this in the XML file:-->
+
+              <!--<property name="url" value="jdbc:h2:file:h2\db;INIT=-->
+<!--RUNSCRIPT FROM 'classpath:schema.sql'\;-->
+<!--RUNSCRIPT FROM 'classpath:test-data.sql'"/>-->
+              <!--(the ; needs to be escaped with a backslash).-->
+              <!--<property name="url" value="jdbc:h2:file:h2\db;INIT=-->
+<!--RUNSCRIPT FROM 'classpath:schema.sql'\;-->
+<!--RUNSCRIPT FROM 'classpath:test-data.sql'"/>-->
+
+
+              <property name="username" value="sa"/>
+              <property name="password" value=""/>
+       </bean>
+</beans>
